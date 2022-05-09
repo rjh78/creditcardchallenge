@@ -21,15 +21,30 @@ const mystery4 = [4, 9, 2, 9, 8, 7, 7, 1, 6, 9, 2, 1, 7, 0, 9, 3];
 const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3];
 
 // An array of all the arrays above
-const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, 
-  invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5];
+const batch = [
+  valid1,
+  valid2,
+  valid3,
+  valid4,
+  valid5,
+  invalid1,
+  invalid2,
+  invalid3,
+  invalid4,
+  invalid5,
+  mystery1,
+  mystery2,
+  mystery3,
+  mystery4,
+  mystery5,
+];
 
 // Add your functions below:
 /* 
 The purpose of validateCred() is to return true 
-when an array contains digits of a valid credit card 
-number and false when it is invalid. Uses Luhn
-algorithm to determine valid CC number.
+when an array contains digits of a valid credit
+card number and false when it is invalid. Uses 
+Luhn algorithm to determine valid CC number.
 */
 function validateCred(array) {
   let sum = 0;
@@ -43,7 +58,7 @@ function validateCred(array) {
         sum += doubleValue;
       }
     } else {
-        sum += array[i];
+      sum += array[i];
     }
   }
   /*
@@ -108,6 +123,16 @@ function idInvalidCardCompanies(invalidCardsArray) {
   }
   return companyArray;
 }
+
+function strToNumArray(str1) {
+  let numArray = [];
+  for (let i = 0; i < str1.length; i++) {
+    numArray.push(parseInt(str1[i], 10));
+  }
+  return numArray;
+}
+
+console.log(strToNumArray("4556827862492291"));
 //console.log(validateCred(valid6));
 //console.log(findInvalidCards(batch));
-console.log(idInvalidCardCompanies(findInvalidCards(batch)));
+//console.log(idInvalidCardCompanies(findInvalidCards(batch)));
